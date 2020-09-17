@@ -11,7 +11,7 @@ import Booking from './comp/Booking';
 import Search from './comp/Search';
 import { createContext } from 'react';
 import PrivateRoute from './comp/PrivateRoute';
-import { useHistory, useLocation } from 'react-router-dom';
+
 
 export const Userloggedin = createContext()
 
@@ -19,63 +19,9 @@ function App() {
 const [issignedin,setIssignedin] = useState(false)
 
 
-const history = useHistory()
-const ''''''''location = useLocation()
-let { from } = location.state || { from: { pathname: "/" } };
 
 
-  const loginemail = data => {
-    if (data.fname && data.lname && data.email && data.password === data.confirmpassword) {
-    auth.createUserWithEmailAndPassword(data.email,data.password)
-    .then(res => {
-      setIssignedin(true)
-      history.replace(from);
-      auth.currentUser.updateProfile({
-        displayName: data.fname + " " +  data.lname
-      }).then(res => {
 
-      })
-      .catch(err => alert(err))
-    })
-    .catch(err => alert(err))
-    }
-  if(!data.fname && !data.lname && data.email && data.password){
-    auth.signInWithEmailAndPassword(data.email,data.password)
-.then(res => {
-  setIssignedin(true)
-  history.replace(from);
-  alert("signin")
-})
-.catch(err => alert(err))
-   
-    
-  
-  }
-  }
-const googlelogin  =() => {
-  auth.signInWithPopup(providergoogle)
-  .then(res => {
-    console.log(res);
-    setIssignedin(true)
-    history.replace(from);
-    auth.currentUser.updateProfile({
-      displayName: res.user.displayName
-    })
-  })
-  .catch(err => alert(err))
-}
-
-
-const facebooklogin =() => {
- auth.signInWithPopup(providerfb)
- .then(res => {
-   alert("signin")
-   history.replace(from);
-   setIssignedin(true)
-   console.log(res);
- })
- .catch(err => alert(err))
-}
 console.log(issignedin);
   return (
   
@@ -91,7 +37,7 @@ console.log(issignedin);
   </div>
           </Route>
           <Route exact path='/login'>
-            <Login loginemail={loginemail} googlelogin={googlelogin} facebooklogin={facebooklogin} />
+            <Login  />
           </Route>
           <Route exact path="/destination/:id">
             <Booking/>
