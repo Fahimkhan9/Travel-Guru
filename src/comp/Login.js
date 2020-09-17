@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { useRef } from 'react';
 import googleicon from '../Icon/google.png'
+import facebookicon from '../Icon/fb.png'
 function Login(props) {
     const [showlogin,setShowLogin] = useState(true)
     const passwordRef = useRef()
@@ -43,6 +44,8 @@ function Login(props) {
     <p onClick={() => setShowLogin(showlogin ? false : true)}>{showlogin ? "Already Hava an acoount" : "Create a new account"}</p>
     </form>
     <button onClick={props.googlelogin} className="btn"><img src={googleicon} width="40px" alt=""/>Continue with GOOGLE</button>
+    <button onClick={props.facebooklogin} className="btn"><img src={facebookicon} width="40px" alt=""/>Continue with FACEBOOK</button>
+     
         </div>
     )
 }

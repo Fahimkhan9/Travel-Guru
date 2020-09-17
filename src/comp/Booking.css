@@ -1,0 +1,22 @@
+.booking-page{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../Image/Rectangle\ 1.png');
+    background-position:center top;
+    height: 100vh;
+ color : white;
+ position: relative;
+}
+
+.booking-form{
+    width: 50%;
+    /* height: 400px; */
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    background: white;
+    color: black;
+    
+    
+}
+.form-control{
+    background: lightgray;
+}

@@ -52,7 +52,7 @@ const toggle = () => {
      )) }
      <li className="nav-item">
          <NavLink to='/login' className="nav-link btn btn-warning text-dark p-2 btn-login">
-             Login
+           Login
          </NavLink>
      </li>
     </ul>
