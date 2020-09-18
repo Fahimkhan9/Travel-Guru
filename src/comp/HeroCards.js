@@ -7,8 +7,8 @@ function HeroCards(props) {
         <div>
             <Link to={"/destination/"+props.id}>
             <div className="hero-cards m-2" onClick={() => props.travelplacename(props.id) } >
-<img src={props.img} alt="" className="card-img"/>
-    <h3 className="card-title">{props.title}</h3>
+<img src={props.img} alt="" className="card-img" style={{position:'relative'}} />
+    {/* <h3 className="card-title" style={{position:'absolute',top:"70%",left:'20%'}}>{props.title}</h3> */}
                   </div>
             </Link>
              

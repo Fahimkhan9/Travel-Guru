@@ -40,7 +40,7 @@ function Booking() {
 <label htmlFor="to">To</label>
         <input type="date"    value="2020-09-25" className="form-control"/>
 </div>
-<Link to="/search">
+<Link to={"/search/"+filter.id}>
 <input type="submit" className="btn btn-warning  btn-block" value="Start Booking"/>  
 
 </Link>

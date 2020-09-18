@@ -42,7 +42,7 @@ console.log(issignedin);
           <Route exact path="/destination/:id">
             <Booking/>
           </Route>
-          <PrivateRoute exact path="/search">
+          <PrivateRoute exact path="/search/:fid">
             <Search/>
           </PrivateRoute>
           

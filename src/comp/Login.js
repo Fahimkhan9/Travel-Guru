@@ -80,7 +80,8 @@ const facebooklogin =() => {
     return (
         <div>
             <Nav color="black"/>
-            <form onSubmit={handleSubmit(loginemail)}>
+            <form onSubmit={handleSubmit(loginemail)} style={{width:'400px',margin:'0px auto',padding:'5px'}}>
+              <h1 style={{textAlign:'center',paddingBottom:'5px'}}>{showlogin ? "Create an Account  " : "Log in"}</h1>
 {showlogin && <div className="form-group">
 <input name="fname" className="form-control"  ref={register({ required: true })} placeholder="First Name"  />
 {errors.fname && <span>First Name is required</span>}
@@ -104,11 +105,13 @@ const facebooklogin =() => {
 </div>}
 
       
-      <input type="submit" />
-    <p onClick={() => setShowLogin(showlogin ? false : true)}>{showlogin ? "Already Hava an acoount" : "Create a new account"}</p>
+      <input type="submit" className="btn btn-warning btn-block" />
+    <p className="text-primary text-center" style={{cursor:'pointer'}} onClick={() => setShowLogin(showlogin ? false : true)}>{showlogin ? "Already Have an acoount?Login" : "Create a new account"}</p>
     </form>
-    <button onClick={googlelogin} className="btn"><img src={googleicon} width="40px" alt=""/>Continue with GOOGLE</button>
-    <button onClick={facebooklogin} className="btn"><img src={facebookicon} width="40px" alt=""/>Continue with FACEBOOK</button>
+   <div className="d-flex flex-column " style={{width:"400px",margin:"0px auto"}}>
+   <button onClick={googlelogin} className="btn bg-white "><img src={googleicon} width="40px" alt=""/>Continue with GOOGLE</button>
+    <button onClick={facebooklogin} className="btn bg-white"><img src={facebookicon} width="40px" alt=""/>Continue with FACEBOOK</button>
+   </div>
      
         </div>
     )
